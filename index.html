@@ -1,59 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+
   <title>Frontend Mentor | Contact form</title>
   <link rel="stylesheet" href="styles.css">
+
+  <script>
+
+     function emailIsValid(email) {
+    return /\S+@\S+\.\S+/.test(email.value);
+  }
+
+  function checkForm(element) {
+    const container = element.parentElement;
+    const errorMsg = container.querySelector(".error-message");
+
+    if (element.type === "checkbox") {
+      if (!element.checked) {
+        errorMsg.style.display = "block";
+      } else {
+        errorMsg.style.display = "none";
+      }
+    } else if (element.type === "email") {
+      if (element.value.trim() === "") {
+        element.style.borderColor = "red";
+        errorMsg.style.display = "block";
+        errorMsg.innerHTML = "This field is required";
+      } else if (!emailIsValid(element)) {
+        element.style.borderColor = "red";
+        errorMsg.style.display = "block";
+        errorMsg.innerHTML = "Please enter a valid email address";
+      } else {
+        element.style.borderColor = "";
+        errorMsg.style.display = "none";
+      }
+    } else {
+      if (element.value.trim() === "") {
+        element.style.borderColor = "red";
+        errorMsg.style.display = "block";
+      } else {
+        element.style.borderColor = "";
+        errorMsg.style.display = "none";
+      }
+    }
+  }
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+      let fname = document.getElementById("first-name");
+      let lname = document.getElementById("last-name");
+      let email = document.getElementById("email");
+      let message = document.getElementById("message");
+      let checkBox = document.querySelector("input[type='checkbox']");
+
+      let info = [fname, lname, email, message, checkBox];
+
+      info.forEach(el => {
+        el.addEventListener("input", () => checkForm(el));
+      });
+    });
+  </script>
 </head>
+
 <body>
-<section class="contact-form">
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <form action="" class="form">
-          <h2>Contact Us</h2>
-          <div class="first-row">
-            <div class="input-50">
-              <label class="label" for="first-name">First Name *</label>
-              <input class="input" type="text" id="first-name" name="first-name" placeholder="Enter your first name" required >
-              <span class="error-message">This field is required</span>
+  <section class="contact-form">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <form action="" class="form">
+            <h2>Contact Us</h2>
+            <div class="first-row">
+              <div class="input-50">
+                <label class="label" for="first-name">First Name *</label>
+                <input class="input" type="text" id="first-name" name="first-name" placeholder="Enter your first name"
+                  required>
+                <span class="error-message">This field is required</span>
+              </div>
+              <div class="input-50">
+                <label class="label" for="last-name">Last Name *</label>
+                <input class="input" type="text" id="last-name" name="last-name" placeholder="Enter your last name"
+                  required>
+                <span class="error-message">This field is required</span>
+              </div>
             </div>
-            <div class="input-50">
-              <label class="label" for="last-name">Last Name *</label>
-              <input class="input" type="text" id="last-name" name="last-name" placeholder="Enter your last name" required>
-              <span class="error-message">This field is required</span>
+            <div class="second-row">
+              <div class="input-100">
+                <label class="label" for="email">Email Address *</label>
+                <input class="input" type="email" id="email" name="email" placeholder="Enter your email address"
+                  required>
+                <span class="error-message">Please enter a valid email address</span>
+              </div>
             </div>
-          </div>
-          <div class="second-row">
-            <div class="input-100">
-              <label class="label" for="email">Email Address *</label>
-              <input class="input" type="email" id="email" name="email" placeholder="Enter your email address" required>
-              <span class="error-message">Please enter a valid email address</span>
+            <div class="third-row">
+              <label class="label-query" for="query">Query *</label>
+              <div class="input-checkbox">
+                <input type="radio" name="query" id="general" value="general">
+                <label class="label" for="general">General Enquiry *</label>
+                <span class="error-message">This field is required</span>
+              </div>
+              <div class="input-checkbox">
+                <input type="radio" name="query" id="support" value="support">
+                <label class="label" for="support">Support Request *</label>
+                <span class="error-message">This field is required</span>
+              </div>
             </div>
-          </div>
-          <div class="third-row">
-            <div class="input-50">
-              <label class="label" for="first-name">First Name *</label>
-              <input class="input" type="text" id="first-name" name="first-name" placeholder="Enter your first name" required >
-              <span class="error-message">This field is required</span>
+            <div class="fourth-row">
+              <div class="input-100">
+                <label class="label" for="message">Message *</label>
+                <textarea name="message" id="message"></textarea>
+                <span class="error-message">This field is required</span>
+              </div>
             </div>
-            <div class="input-50">
-              <label class="label" for="last-name">Last Name *</label>
-              <input class="input" type="text" id="last-name" name="last-name" placeholder="Enter your last name" required>
-              <span class="error-message">This field is required</span>
+            <div class="fifth-row">
+              <div class="input-concent">
+                <input class="checkbox" type="checkbox">
+                <label class="label" for="check">I concent to being contacted by team *</label><br>
+                <span class="error-message">Please concent to being contacted by team</span>
+              </div>
             </div>
-          </div>
-        </form>
+            <div class="sixth-row">
+              <input type="submit" name="submit" id="submit" class="submit">
+            </div>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-  
+  </section>
+
 </body>
+
 </html>
 
 

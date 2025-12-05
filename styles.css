@@ -1,16 +1,16 @@
 @font-face {
     font-family: "Karla-Italic";
     src: url(assets/fonts/Karla-Italic-VariableFont_wght.ttf) format("truetype");
-    font-weight: 400 700; 
+    font-weight: 400 700;
 }
 
 @font-face {
     font-family: "Karla";
     src: url(assets/fonts/Karla-VariableFont_wght.ttf) format("truetype");
-    font-weight: 400 700;  
+    font-weight: 400 700;
 }
 
-:root{
+:root {
     --Green-200: hsl(148, 38%, 91%);
     --Green-600: hsl(169, 82%, 27%);
     --Red: hsl(0, 66%, 54%);
@@ -19,13 +19,13 @@
     --Grey-900: hsl(187, 24%, 22%);
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     font-family: 'Karla', sans-serif;
     background-color: var(--Green-200);
     color: var(--Grey-900);
@@ -35,19 +35,18 @@ body{
     height: 100vh;
 }
 
-.contact-form{
+.contact-form {
     width: 100%;
     height: 100dvh;
 }
 
-.container{
+.container {
     max-width: 1110px;
     height: 100dvh;
-    background-color: white;
     margin: 0 auto;
 }
 
-.row{
+.row {
     width: 100%;
     height: 100dvh;
     display: flex;
@@ -56,66 +55,182 @@ body{
     align-items: center;
     width: 100%;
     height: 100dvh;
-    background-color: var(--White);
 }
 
-.col{
+.col {
     width: 80%;
     height: auto;
     padding: 35px;
-    background-color: var(--Green-200);
+    background-color: var(--White);
     border-radius: 16px;
 }
 
-.form{
+.form {
     display: flex;
     flex-direction: column;
     gap: 32px;
 }
 
-h2{
+h2 {
     font-size: 38px;
     font-weight: 700;
     color: var(--Grey-900);
 }
 
-.first-row{
+.first-row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     height: auto;
-    background-color: var(--Green-600);
 }
 
-.input-50{
+.input-50 {
     width: 49%;
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
 
-.label{
+.input-100{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.input-checkbox{
+    width: 49%;
+    height: 60px;
+    border: 1px solid var(--Grey-500);
+    border-radius: 8px;
+    padding: 16px 16px;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--Grey-900);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+    
+}
+
+.input-concent{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+}
+
+.label {
     display: block;
     font-size: 16px;
     font-weight: 400;
     color: var(--Grey-900);
 }
 
-.input{
+.input {
     width: 100%;
-    height: 48px;
+    height: 60px;
     border: 1px solid var(--Grey-500);
     border-radius: 8px;
     padding: 12px 16px;
     font-size: 16px;
     font-weight: 400;
     color: var(--Grey-900);
+    font-family: 'Karla' , sans-serif;
 }
 
-.error-message{
+.error-message {
+    display: none;
     font-size: 16px;
     font-weight: 400;
     color: var(--Red);
 }
+
+.third-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    border: 1px solid var(--Grey-500);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Karla' , sans-serif;
+}
+
+.fifth-row{
+    width: 100%;
+}
+
+.sixth-row{
+    width: 100%;
+}
+
+.submit{
+    width: 100%;
+    height: 60px;
+    background-color: var(--Green-600);
+    color: var(--White);
+    border-radius: 8px;
+    border: none;
+}
+
+.label-query{
+    width: 100%;
+    display: block;
+    margin-bottom: 16px;
+}
+
+.input:focus,
+textarea:focus{
+    outline: 2px solid var(--Green-600);
+    border: 0;
+    color: var(--Green-600);
+    font-size: 20px;
+}
+
+.input-checkbox:focus-within{
+    background-color: var(--Green-200);
+    color: var(--Green-600);
+    outline: 2px solid var(--Green-600);
+    border: 0;
+    color: var(--Green-600);
+    font-size: 20px;
+}
+
+.checkbox{
+    border-radius: 50%;
+}
+
+input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: var(--Green-600);
+    flex-shrink: 0;
+}
+
+input[type="radio"]:hover {
+    accent-color: var(--Green-600);
+}
+
+.input-checkbox label {
+    cursor: pointer;
+    display: inline;
+}
+
