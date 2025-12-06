@@ -197,7 +197,7 @@ textarea {
 }
 
 .input:focus,
-textarea:focus{
+textarea:focus , input:hover , textarea:hover{
     outline: 2px solid var(--Green-600);
     border: 0;
     color: var(--Green-600);
