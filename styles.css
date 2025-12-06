@@ -37,7 +37,7 @@ body {
 
 .contact-form {
     width: 100%;
-    height: 100dvh;
+    height: auto;
 }
 
 .container {
@@ -48,13 +48,12 @@ body {
 
 .row {
     width: 100%;
-    height: 100dvh;
+    height: auto;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100dvh;
+    padding: 32px 0;
 }
 
 .col {
@@ -93,14 +92,14 @@ h2 {
     gap: 16px;
 }
 
-.input-100{
+.input-100 {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
 
-.input-checkbox{
+.input-checkbox {
     width: 49%;
     height: 60px;
     border: 1px solid var(--Grey-500);
@@ -114,10 +113,10 @@ h2 {
     justify-content: flex-start;
     align-items: center;
     gap: 16px;
-    
+
 }
 
-.input-concent{
+.input-concent {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -142,7 +141,7 @@ h2 {
     font-size: 16px;
     font-weight: 400;
     color: var(--Grey-900);
-    font-family: 'Karla' , sans-serif;
+    font-family: 'Karla', sans-serif;
 }
 
 .error-message {
@@ -170,18 +169,18 @@ textarea {
     padding: 12px 16px;
     font-size: 16px;
     font-weight: 400;
-    font-family: 'Karla' , sans-serif;
+    font-family: 'Karla', sans-serif;
 }
 
-.fifth-row{
+.fifth-row {
     width: 100%;
 }
 
-.sixth-row{
+.sixth-row {
     width: 100%;
 }
 
-.submit{
+.submit {
     width: 100%;
     height: 60px;
     background-color: var(--Green-600);
@@ -190,21 +189,23 @@ textarea {
     border: none;
 }
 
-.label-query{
+.label-query {
     width: 100%;
     display: block;
     margin-bottom: 16px;
 }
 
 .input:focus,
-textarea:focus , input:hover , textarea:hover{
+textarea:focus,
+input:hover,
+textarea:hover {
     outline: 2px solid var(--Green-600);
     border: 0;
     color: var(--Green-600);
     font-size: 20px;
 }
 
-.input-checkbox:focus-within{
+.input-checkbox:focus-within {
     background-color: var(--Green-200);
     color: var(--Green-600);
     outline: 2px solid var(--Green-600);
@@ -213,7 +214,7 @@ textarea:focus , input:hover , textarea:hover{
     font-size: 20px;
 }
 
-.checkbox{
+.checkbox {
     border-radius: 50%;
 }
 
@@ -232,11 +233,116 @@ input[type="radio"]:hover {
 .input-checkbox label {
     cursor: pointer;
     display: inline;
-    font-size : 18px ;
-}
-
-.submit{
-    font-family: 'Karla' , sans-serif;
     font-size: 18px;
 }
 
+.submit {
+    font-family: 'Karla', sans-serif;
+    font-size: 18px;
+}
+
+@media (max-width: 375px) {
+   
+    .form {
+        gap: 16px;
+    }
+
+    .first-row {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .input-50 {
+        width: 100%;
+        margin-bottom: 16px;
+    }
+
+    .input-checkbox{
+        width: 100%;
+        margin-bottom: 16px;
+    }
+}
+
+/* Tablet styles: small tablets up to larger tablets */
+@media (min-width: 376px) and (max-width: 1024px) {
+
+    body {
+        align-items: flex-start;
+        padding: 40px 0;
+        height: auto;
+    }
+
+    .container {
+        height: auto;
+        padding: 0 24px;
+    }
+
+    .col {
+        width: 92%;
+        padding: 28px;
+        border-radius: 12px;
+    }
+
+    .form {
+        gap: 24px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    .row {
+        padding: 24px 0;
+    }
+
+    .first-row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 16px;
+        justify-content: space-between;
+    }
+
+    .input-50 {
+        width: 48%;
+    }
+
+    .input-checkbox {
+        width: 48%;
+    }
+
+    .input,
+    .input-checkbox {
+        height: 56px;
+        padding: 10px 14px;
+        font-size: 15px;
+    }
+
+    textarea {
+        height: 140px;
+    }
+
+    .submit {
+        height: 56px;
+        font-size: 16px;
+    }
+
+}
+
+/* Narrow-tablet / portrait orientation tweaks */
+@media (min-width: 376px) and (max-width: 768px) {
+    .first-row {
+        flex-direction: column;
+    }
+
+    .input-50,
+    .input-checkbox {
+        width: 100%;
+        margin-bottom: 12px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+}
