@@ -232,5 +232,11 @@ input[type="radio"]:hover {
 .input-checkbox label {
     cursor: pointer;
     display: inline;
+    font-size : 18px ;
+}
+
+.submit{
+    font-family: 'Karla' , sans-serif;
+    font-size: 18px;
 }
 

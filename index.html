@@ -27,6 +27,13 @@
       } else {
         errorMsg.style.display = "none";
       }
+    }
+      else if (element.type === "radio") {
+      if (!element.checked) {
+        errorMsg.style.display = "block";
+      } else {
+        errorMsg.style.display = "none";
+      }
     } else if (element.type === "email") {
       if (element.value.trim() === "") {
         element.style.borderColor = "red";
@@ -101,12 +108,12 @@
               <label class="label-query" for="query">Query *</label>
               <div class="input-checkbox">
                 <input type="radio" name="query" id="general" value="general">
-                <label class="label" for="general">General Enquiry *</label>
+                <label class="label" for="general">General Enquiry</label>
                 <span class="error-message">This field is required</span>
               </div>
               <div class="input-checkbox">
                 <input type="radio" name="query" id="support" value="support">
-                <label class="label" for="support">Support Request *</label>
+                <label class="label" for="support">Support Request</label>
                 <span class="error-message">This field is required</span>
               </div>
             </div>
